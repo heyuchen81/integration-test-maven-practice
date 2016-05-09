@@ -9,10 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class MavenTests {
 
+	WebDriver driver = null;
+	
 	@Test
 	public void browserStack1() throws MalformedURLException, InterruptedException {
 //      String USERNAME = "xinhe1";
@@ -34,7 +37,7 @@ public class MavenTests {
 	    caps.setCapability("os_version", "8.1");
 	    caps.setCapability("resolution", "1366x768");
 
-	    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+	    driver = new RemoteWebDriver(new URL(URL), caps);
 	    driver.get("http://www.google.com");
 	    WebElement element = driver.findElement(By.name("q"));
 
@@ -49,5 +52,12 @@ public class MavenTests {
 	    Thread.sleep(1000);
 	    driver.quit();
 	}
+	
+	@AfterMethod
+    public void tearDown()
+    {
+		if (driver != null) driver.quit();
+    }
+	
 	
 }
