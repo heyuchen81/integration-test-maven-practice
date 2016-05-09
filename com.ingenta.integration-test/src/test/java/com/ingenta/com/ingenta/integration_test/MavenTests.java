@@ -50,7 +50,7 @@ public class MavenTests {
 	    System.out.println(driver.getTitle());
 
 	    try {
-		    Assert.assertTrue(driver.getTitle().contains("Ingenta"));	    	
+		    Assert.assertTrue(driver.getTitle().contains("Publish"));	    	
 	    }catch (Exception ex) {
 	    	System.out.println("I have found an error!!!");
 	    	System.out.println("ERROR MESSAGE CAPTURED BY XIN HE is: " + ex.getMessage());
