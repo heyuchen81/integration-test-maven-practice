@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class MavenTests {
@@ -39,9 +40,13 @@ public class MavenTests {
 
 	    element.sendKeys("Beijing Union University");
 	    element.submit();
+	    
+	    
 	    Thread.sleep(3000);
 
 	    System.out.println(driver.getTitle());
+	    Assert.assertTrue(driver.getTitle().contains("Ingenta"));
+	    Thread.sleep(1000);
 	    driver.quit();
 	}
 	
