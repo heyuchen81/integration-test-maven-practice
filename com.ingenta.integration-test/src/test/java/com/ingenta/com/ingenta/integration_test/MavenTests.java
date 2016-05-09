@@ -14,10 +14,10 @@ public class MavenTests {
 
 	@Test
 	public void browserStack1() throws MalformedURLException {
-		String USERNAME = "xinhe1";
-		String AUTOMATE_KEY = "myHB39JW5AqqzGMhAzzT";
-		String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-//		String URL = "https://hub.browserstack.com/wd/hub";
+//      String USERNAME = "xinhe1";
+//      String AUTOMATE_KEY = "myHB39JW5AqqzGMhAzzT";
+//		String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+		String URL = "https://$USERNAME:$AUTOMATE_KEY@hub.browserstack.com/wd/hub";
 		
 		DesiredCapabilities caps = new DesiredCapabilities();
 //	    caps.setCapability("browser", "IE");
@@ -36,7 +36,7 @@ public class MavenTests {
 	    driver.get("http://www.google.com");
 	    WebElement element = driver.findElement(By.name("q"));
 
-	    element.sendKeys("Yang Mi");
+	    element.sendKeys("Xu Hui");
 	    element.submit();
 
 	    System.out.println(driver.getTitle());
