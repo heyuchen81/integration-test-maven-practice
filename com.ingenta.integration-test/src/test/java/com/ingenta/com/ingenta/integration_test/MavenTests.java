@@ -21,6 +21,9 @@ public class MavenTests {
 		
       System.out.println("https://$USERNAME:$AUTOMATE_KEY@hub.browserstack.com/wd/hub");
       
+      System.out.println("USER NAME IS: " + System.getenv("USERNAME") + ".\n");
+      System.out.println("AUTOMATE KEY IS: " + System.getenv("AUTOMATE_KEY") + ".\n");
+      
 		DesiredCapabilities caps = new DesiredCapabilities();
 //	    caps.setCapability("browser", "IE");
 //	    caps.setCapability("browser_version", "7.0");
