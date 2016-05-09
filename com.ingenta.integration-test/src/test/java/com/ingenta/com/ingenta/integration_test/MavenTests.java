@@ -41,16 +41,22 @@ public class MavenTests {
 	    driver.get("http://www.google.com");
 	    WebElement element = driver.findElement(By.name("q"));
 
-	    element.sendKeys("Beijing Union University");
+	    element.sendKeys("Publishing Technology");
 	    element.submit();
 	    
 	    
 	    Thread.sleep(3000);
 
 	    System.out.println(driver.getTitle());
-	    Assert.assertTrue(driver.getTitle().contains("Ingenta"));
+
+	    try {
+		    Assert.assertTrue(driver.getTitle().contains("Ingenta"));	    	
+	    }catch (Exception ex) {
+	    	System.out.println("ERROR MESSAGE CAPTURED BY XIN HE is: " + ex.getMessage());
+		    Thread.sleep(1000);
+	    	Assert.fail();
+	    }
 	    Thread.sleep(1000);
-	    driver.quit();
 	}
 	
 	@AfterMethod
