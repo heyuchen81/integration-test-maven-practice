@@ -14,11 +14,13 @@ public class MavenTests {
 
 	@Test
 	public void browserStack1() throws MalformedURLException {
-//      String USERNAME = "xinhe1";
-//      String AUTOMATE_KEY = "myHB39JW5AqqzGMhAzzT";
-//		String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
-		String URL = "https://$USERNAME:$AUTOMATE_KEY@hub.browserstack.com/wd/hub";
+      String USERNAME1 = "xinhe1";
+      String AUTOMATE_KEY1 = "myHB39JW5AqqzGMhAzzT";
+      String URL = "https://" + USERNAME1 + ":" + AUTOMATE_KEY1 + "@hub.browserstack.com/wd/hub";
+		//String URL = "https://$USERNAME:$AUTOMATE_KEY@hub.browserstack.com/wd/hub";
 		
+      System.out.println("https://$USERNAME:$AUTOMATE_KEY@hub.browserstack.com/wd/hub");
+      
 		DesiredCapabilities caps = new DesiredCapabilities();
 //	    caps.setCapability("browser", "IE");
 //	    caps.setCapability("browser_version", "7.0");
